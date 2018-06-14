@@ -95,8 +95,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias visu="sudo /home/daq/Project/FirmwareTests/ServeurUdp/build/bin/visu"
-alias daqdpga="sudo /home/daq/Project/FirmwareTests/ServeurUdp/build/bin/daqdpga -i enp0s31f6 -g 1:2:3:4:5:6:7:8 -a -o 1 "
+#alias visu="sudo /home/daq/Project/FirmwareTests/ServeurUdp/build/bin/visu"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -144,6 +143,7 @@ alias rm="rm -i"
 #export LD_LIBRARY_PATH=/home/daq/Project/FirmwareTests/ServeurUdp/build/lib
 #alias dcs_tb="/home/daq/Project/FirmwareTests/Dcs/QtDcs09012018/build/qtdcs"
 
-export DIR_DCS=/home/daq/Project/FirmwareTests/Dcs
+export DIR_DCS=/home/daq/Project/FirmwareTests/Dcs/
 export LD_LIBRARY_PATH=/home/daq/Dpga/build/lib
-export PATH=/home/daq/Dpga/build/bin:$PATH
+export PATH=/home/daq/Dpga/build/bin:/home/daq/intelFPGA_pro/18.0/qprogrammer/bin/:$PATH
+alias daqdpga="sudo /home/daq/Dpga/build/bin/daqdpga -i enp0s31f6 -g 1:2:3:4:5:6:7:8 -a -o 1 "
