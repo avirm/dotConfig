@@ -135,7 +135,7 @@ alias sshHV="ssh -Y daq2@192.168.100.9"
 alias sshAvirmServer="ssh -Y admin@134.158.126.62"
 
 alias setIPloc="sudo ifconfig enp0s31f6 192.168.100.10"
-alias ipdel="ip route del default"
+alias ipdel="sudo ip route del default"
 
 alias rm="rm -i"
 
