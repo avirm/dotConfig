@@ -121,14 +121,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export GOROOT=$HOME/Travail/go
-export PATH=$GOROOT/bin:$PATH
-export GOPATH=$HOME/Travail/gowork2
-export PATH=$GOPATH/bin:$PATH
-
-alias setuproot5="source /home/daq/root/root-5.34.36-build/bin/thisroot.sh"
-alias setuproot6="source /home/daq/root/root-6.08.00-build/bin/thisroot.sh"
-alias setuproot612="source /home/daq/root/root-6.12.06/root/bin/thisroot.sh"
+alias setuproot612="source /home/daq/root-6.12.06-build/bin/thisroot.sh"
 
 alias sshCPU="ssh -Y root@192.168.100.11"
 alias sshHV="ssh -Y daq2@192.168.100.9"
@@ -139,11 +132,13 @@ alias ipdel="sudo ip route del default"
 
 alias rm="rm -i"
 
-#export DAQ_PROJECT_PATH=/home/daq/Project/FirmwareTests/ServeurUdp
-#export LD_LIBRARY_PATH=/home/daq/Project/FirmwareTests/ServeurUdp/build/lib
-#alias dcs_tb="/home/daq/Project/FirmwareTests/Dcs/QtDcs09012018/build/qtdcs"
+export DPGA=/home/daq/Project/DPGA
 
-export DIR_DCS=/home/daq/Project/FirmwareTests/Dcs/
-export LD_LIBRARY_PATH=/home/daq/Dpga/build/lib
-export PATH=/home/daq/Dpga/build/bin:/home/daq/intelFPGA_pro/18.0/qprogrammer/bin/:$PATH
-alias daqdpga="sudo /home/daq/Dpga/build/bin/daqdpga -i enp0s31f6 -g 1:2:3:4:5:6:7:8 -a -o 1 "
+export DIR_DCS=$DPGA
+export LD_LIBRARY_PATH=$DPGA/build/lib
+export PATH=$DPGA/build/bin:/home/daq/intelFPGA_pro/18.0/qprogrammer/bin/:$PATH
+alias daqdpga="daqdpga -i enp0s31f6 -g 1:2:3:4:5:6:7:8 -a -o 1 "
+
+export GOPATH=$DPGA/gowork
+export PATH=$GOPATH/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
