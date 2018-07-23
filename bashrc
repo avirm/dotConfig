@@ -139,6 +139,6 @@ export LD_LIBRARY_PATH=$DPGA/build/lib
 export PATH=$DPGA/build/bin:/home/daq/intelFPGA_pro/18.0/qprogrammer/bin/:$PATH
 alias daqdpga="daqdpga -i enp0s31f6 -g 1:2:3:4:5:6:7:8 -a -o 1 "
 
-export GOPATH=$DPGA/gowork
+export GOPATH=$DPGA/../gowork
 export PATH=$GOPATH/bin:$PATH
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/daq/go/go/bin
