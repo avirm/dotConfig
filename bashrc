@@ -132,6 +132,8 @@ alias ipdel="sudo ip route del default"
 
 alias rm="rm -i"
 
+alias killdaq="ps -u daq | grep daqdpga | awk '{print "kill -9 "$1}' | sh"
+
 export DPGA=/home/daq/Project/DPGA
 
 export DIR_DCS=$DPGA
