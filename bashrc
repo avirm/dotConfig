@@ -134,13 +134,22 @@ alias rm="rm -i"
 
 alias killdaq="ps -u daq | grep daqdpga | awk '{print \"kill -9 \"\$1}' | sh"
 
-export DPGA=/home/daq/Project/DPGA
+export DPGA=/home/daq/Project/gowork
 
 export DIR_DCS=$DPGA
 export LD_LIBRARY_PATH=$DPGA/build/lib
 export PATH=$DPGA/build/bin:/home/daq/intelFPGA_pro/18.0/qprogrammer/bin/:$PATH
 alias daqdpga="daqdpga -i enp0s31f6 -g 1:2:3:4:5:6:7:8 -a -o 1 "
 
-export GOPATH=$DPGA/../gowork
+export GOPATH=$DPGA
 export PATH=$GOPATH/bin:$PATH
 export PATH=$PATH:/home/daq/go/go/bin
+
+export GODAQPATH=/home/daq/Project/gowork/src/gitlab.in2p3.fr/avirm/analysis-go/rct/godaq
+
+alias setGOPATHVME="export GOPATH=$DPGA/../goworkVME/"
+
+alias bashrc="source .bashrc"
+
+#  godaq -i /home/daq/datas/RunTest/MyFile_enp0s31f6@0_0.bin -mf 1 -ef 1 -notree -sigthres 800 
+#
