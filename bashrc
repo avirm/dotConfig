@@ -122,6 +122,7 @@ if ! shopt -oq posix; then
 fi
 
 alias setuproot612="source /home/daq/root-6.12.06-build/bin/thisroot.sh"
+alias setuproot534="source /home/daq/root-5.34.36-build/bin/thisroot.sh"
 
 alias sshCPU="ssh -Y root@192.168.100.11"
 alias sshHV="ssh -Y daq2@192.168.100.9"
@@ -134,10 +135,18 @@ alias rm="rm -i"
 
 alias killdaq="ps -u daq | grep daqdpga | awk '{print \"kill -9 \"\$1}' | sh"
 
-export DPGA=/home/daq/Project/gowork
+## VME
+export DPGA=/home/daq/Project/goworkVME
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/daq/Project/goworkVME/pkg/linux_amd64/github.com/go-hep/croot/_lib/
+source ../../root-5.34.36-ubuntu14/root/bin/thisroot.sh 
+#export CGO_LDFLAGS_ALLOW="-(m64|rdynamic)"
+
+## TCA
+#export DPGA=/home/daq/Project/gowork
+#setuproot612
 
 export DIR_DCS=$DPGA
-export LD_LIBRARY_PATH=$DPGA/build/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$DPGA/build/lib
 export PATH=$DPGA/build/bin:/home/daq/intelFPGA_pro/18.0/qprogrammer/bin/:$PATH
 alias daqdpga="daqdpga -i enp0s31f6 -g 1:2:3:4:5:6:7:8 -a -o 1 "
 
